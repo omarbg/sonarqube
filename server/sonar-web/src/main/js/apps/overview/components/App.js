@@ -58,6 +58,8 @@ export default class App extends React.PureComponent {
         query: { id: component.key }
       });
     } else if (this.isFile()) {
+      /* eslint-disable no-console */
+      console.log(getCodeUrl(component.breadcrumbs[0].key, getBranchName(branch), component.key));
       this.context.router.replace(
         getCodeUrl(component.breadcrumbs[0].key, getBranchName(branch), component.key)
       );
